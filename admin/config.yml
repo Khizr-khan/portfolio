@@ -1,1 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "sections"
+    label: "Sections"
+    folder: "content/sections"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Content", name: "content", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+
+  - name: "resume"
+    label: "Resume"
+    files:
+      - file: "content/resume/resume.md"
+        label: "Resume Upload"
+        name: "resume"
+        fields:
+          - { label: "Upload PDF", name: "file", widget: "file" }
 
